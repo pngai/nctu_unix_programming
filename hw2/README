@@ -1,0 +1,19 @@
+Target: wget
+
+Test:
+    Run 'make test' or 'make testssl'
+    alternatively run 'LD_PRELOAD=./hijack.so wget ARGS'
+
+    Add --delete-after to test unlink 
+    Add --backups=1 to test rename
+
+Implemented Funtions:
+    1)  log file and directory operations: creation, open, read, write, rename, deletion
+        with arguments
+    2)  The IP address that a client program connects to.
+    3)  The data exchanged between the client program and the servers. Specifically this
+        means the info exchanged to create SSL sessions. Eg. protocol version, cipher suite,
+        master key etc.
+
+    Info 1) and 2) are logged to log.txt while 3) is logged to ssl_log.txt
+
